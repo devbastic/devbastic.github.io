@@ -5,6 +5,7 @@ body {
 
 .banner {
   width: 100%;
+  height: 20vh; /* 20% of the viewport height */
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -16,12 +17,14 @@ body {
 .banner-inner {
   display: flex;
   width: calc(100% * 4);
+  height: 100%;
   animation: scroll 8s linear infinite;
 }
 
 .banner img {
   width: 25%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Ensures the images cover the banner area without distortion */
 }
 
 @keyframes scroll {
