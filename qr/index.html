@@ -67,7 +67,7 @@
 <body>
     <div class="container">
         <h1>Submit a Review</h1>
-        <form id="reviewForm">
+        <form id="reviewForm" method="POST" action="thanks.html">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" maxlength="48" required>
@@ -78,7 +78,7 @@
                 <textarea id="review" name="review" maxlength="1024" rows="5" required></textarea>
                 <div class="error" id="reviewError">Review must be less than 1024 characters.</div>
             </div>
-            <button type="submit">Submit</button>
+        <button type="submit">Go! plaatsen die dikke review!</button>
         </form>
     </div>
 
@@ -106,10 +106,9 @@
 
             if (!isValid) {
                 event.preventDefault();
-            } else {
-                window.location.href = "https://devbastic.github.io/qr/thanks.html";
             }
         });
     </script>
 </body>
 </html>
+ 
