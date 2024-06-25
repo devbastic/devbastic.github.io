@@ -84,6 +84,8 @@
 
     <script>
         document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
             var name = document.getElementById('name').value;
             var review = document.getElementById('review').value;
             var nameError = document.getElementById('nameError');
@@ -104,9 +106,7 @@
                 reviewError.style.display = 'none';
             }
 
-            if (!isValid) {
-                event.preventDefault();
-            } else {
+            if (isValid) {
                 window.location.href = "https://devbastic.github.io/qr/thanks.html";
             }
         });
