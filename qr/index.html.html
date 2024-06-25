@@ -67,7 +67,7 @@
 <body>
     <div class="container">
         <h1>Submit a Review</h1>
-        <form id="reviewForm">
+        <form id="reviewForm" method="POST" action="thanks.html">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" maxlength="48" required>
@@ -84,8 +84,6 @@
 
     <script>
         document.getElementById('reviewForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
             var name = document.getElementById('name').value;
             var review = document.getElementById('review').value;
             var nameError = document.getElementById('nameError');
@@ -106,8 +104,8 @@
                 reviewError.style.display = 'none';
             }
 
-            if (isValid) {
-                window.location.href = "https://devbastic.github.io/qr/thanks.html";
+            if (!isValid) {
+                event.preventDefault();
             }
         });
     </script>
